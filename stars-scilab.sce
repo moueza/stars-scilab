@@ -18,11 +18,12 @@ function xyz=terreMAT(T)
       // xyz=[0 0 0]
      xyz(1,:)=cos(2*%pi*T); //!! que car 1 fois op speciale 
           xyz(2,:)=sin(2*%pi*T) ;
-               xyz(3,:)=0*T ; 
+               xyz(3,:)=1*T ; 
 endfunction
-terreMAT([1 10 100 1000])
+T=0:.1:1;
+XYZ=terreMAT(0:.1:1)
 
-x= [1 10 100];
-y= [1 10 100];
-z= [1 10 100];
-param3d(x, y, z)
+X= XYZ(1,:);
+Y= XYZ(2,:);
+Z= XYZ(3,:);
+param3d(X, Y, Z)
