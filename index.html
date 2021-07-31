@@ -2,22 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <title>Vue</title>
+    
+<!-- TODO Vue title same as h1 in waiting ... by js-->
+<!--    <title>{{ titleH1 }}</title>-->
+     <title id="titr"></title>
   </head>
 
   <body>
-    <h1>{{ titleH1 }}</h1>
+   
     <div id="app">
+       <h1>{{ titleH1 }}</h1>
       v15
       <div id="div1">
-	    
-	    <img src='terre.png' alt="Earth trajectory modelisation">
-	    </div>
-    
+	
+	<img src='terre.png' alt="Earth trajectory modelisation">
+      </div>
 
+    </div id="app">  
     
- 
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script type="text/javascript" src="index.js"></script>
@@ -26,34 +28,28 @@
       const app = new Vue({
           el: "#app",
           data: {
-              message: "Bonjour Openclassrooms clap", //String
-              answerToLife: 42, //number
-              groceries: ["pommes", "bananes", "noix de coco"], //Arrays
-              timeForFlunch: false, //Boolean
-		  titleH1: 'TERRE',
-              info: {
+	      message: "Bonjour Openclassrooms clap", //String
+	      answerToLife: 42, //number
+	      groceries: ["pommes", "bananes", "noix de coco"], //Arrays
+	      timeForFlunch: false, //Boolean
+	      titleH1: 'TERRE',
+	      info: {
 		  //object
 		  topic: "VueJS",
 		  length: 5,
-              },
+	      },
 
-              //TODO compute here
-              //costOfApples:2.5/20,
-              costOfApples: 2.5 / 20,
+	      //TODO compute here
+	      //costOfApples:2.5/20,
+	      costOfApples: 2.5 / 20,
 
-              costOfBananas: 2,
-              costOfCoconuts: 1.5,
-	      titrH1: "vue"
+	      costOfBananas: 2,
+	      costOfCoconuts: 1.5,
+	      titrH1: "vue",
           },
       });
     </script>
     <!--  https://www.w3schools.com/html/html5_canvas.asp-->
-    <script>
-      var c = document.getElementById("myCanvas");
-      var ctx = c.getContext("2d");
-      ctx.moveTo(0, 0);
-      ctx.lineTo(200, 100);
-      ctx.stroke();
-    </script>
+ 
   </body>
 </html>
