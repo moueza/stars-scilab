@@ -54,3 +54,5 @@ X= XYZ(1,:);
 Y= XYZ(2,:);
 Z= XYZ(3,:);
 param3d(X, Y, Z)
+
+xs2png(0,'terre.png')
