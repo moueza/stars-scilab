@@ -2,13 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <title>{{ titleH1 }}</title>
+    
+<!-- TODO Vue title same as h1 in waiting ... by js-->
+<!--    <title>{{ titleH1 }}</title>-->
+     <title id="titr"></title>
   </head>
 
   <body>
-    <h1>{{ titleH1 }}</h1>
+   
     <div id="app">
+       <h1>{{ titleH1 }}</h1>
       v15
       <div id="div1">
 	
@@ -42,17 +45,11 @@
 
 	      costOfBananas: 2,
 	      costOfCoconuts: 1.5,
-	      titrH1: "vue"
+	      titrH1: "vue",
           },
       });
     </script>
     <!--  https://www.w3schools.com/html/html5_canvas.asp-->
-    <script>
-      var c = document.getElementById("myCanvas");
-      var ctx = c.getContext("2d");
-      ctx.moveTo(0, 0);
-      ctx.lineTo(200, 100);
-      ctx.stroke();
-    </script>
+ 
   </body>
 </html>
