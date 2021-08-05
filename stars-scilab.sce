@@ -53,7 +53,7 @@ XYZ=planetMATRIX(timesDAYS,demiGdAxeTERRE,excentTERRE,periodTERRE)
 X= XYZ(1,:);
 Y= XYZ(2,:);
 Z= XYZ(3,:);
-//param3d(X, Y, Z)
+param3d(X, Y, Z)
 
 
 
