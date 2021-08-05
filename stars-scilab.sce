@@ -55,4 +55,15 @@ Y= XYZ(2,:);
 Z= XYZ(3,:);
 param3d(X, Y, Z)
 
+
+
+// simple plot using z=f(x,y)
+//x=[0:0.3:2*%pi]';
+//x=[0:0.3:149597887*2]';
+x=linspace(0,149597887*2,10)';
+y=linspace(0,149597887*2,10)';
+//z=0;
+z=ones(x*y')*x; // vectorial addition for ones
+//z=sin(x)*cos(x');++++++++++++++++++++++ matrix if vectors
+plot3d(x,y,z)
 xs2png(0,'terre.png')
