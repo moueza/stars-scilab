@@ -53,7 +53,7 @@ XYZ=planetMATRIX(timesDAYS,demiGdAxeTERRE,excentTERRE,periodTERRE)
 X= XYZ(1,:);
 Y= XYZ(2,:);
 Z= XYZ(3,:);
-param3d(X, Y, Z)
+//param3d(X, Y, Z)
 
 
 
@@ -62,8 +62,10 @@ param3d(X, Y, Z)
 //x=[0:0.3:149597887*2]';
 x=linspace(0,149597887*2,10)';
 y=linspace(0,149597887*2,10)';
-//z=0;
-z=ones(x*y')*x; // vectorial addition for ones
+
 //z=sin(x)*cos(x');++++++++++++++++++++++ matrix if vectors
+//z=0;
+z=ones(x*y')*x; // vector addition for ones ,vector so should fail because we want ~ square matrix
+//z=ones(x*y')*x';
 plot3d(x,y,z)
-xs2png(0,'terre.png')
+//xs2png(0,'terre.png')
