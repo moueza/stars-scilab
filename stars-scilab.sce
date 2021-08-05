@@ -68,4 +68,10 @@ y=linspace(0,149597887*2,10)';
 z=ones(x*y')*x; // vector addition for ones ,vector so should fail because we want ~ square matrix
 //z=ones(x*y')*x';
 plot3d(x,y,z)
-//xs2png(0,'terre.png')
+xs2png(0,'terre.png')
+
+
+
+  demiGdAxeMARS=227939200;
+excentMARS=	0.0934;
+periodMARS=  	779.96    ;
