@@ -25,3 +25,8 @@ plot2d(x',u);//OK
 
 
 //p84
+
+
+
+xs2png(0,'scilab-colors-moueza.png')
+
