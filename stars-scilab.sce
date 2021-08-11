@@ -53,7 +53,11 @@ XYZ=planetMATRIX(timesDAYS,demiGdAxeTERRE,excentTERRE,periodTERRE)
 X= XYZ(1,:);
 Y= XYZ(2,:);
 Z= XYZ(3,:);
-//param3d(X, Y, Z)
+styless=ones(1,size(Z,"c"))
+//param3d(X, Y, ZZ = list(Z, [color("orange")]));//courbe gauche, left curve
+//param3d(X, Y,  list(Z, list(Z,styless)));//courbe gauche, left curve
+
+param3d(X, Y, 3);//courbe gauche, left curve
 
 
 
@@ -67,7 +71,7 @@ y=linspace(0,149597887*2,10)';
 //z=0;
 z=ones(x*y')*x; // vector addition for ones ,vector so should fail because we want ~ square matrix
 //z=ones(x*y')*x';
-plot3d(x,y,z)
+plot3d(x,y,z);//nappe mesh
 xs2png(0,'terre.png')
 
 
