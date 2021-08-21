@@ -75,7 +75,9 @@ plot3d(x,y,z);//nappe mesh
 xs2png(0,'terre.png')
 
 
-
+//POO tlist list
   demiGdAxeMARS=227939200;
 excentMARS=	0.0934;
 periodMARS=  	779.96    ;
+
+//TODO constellation Cassiopee, gde Ourse, Pte Ourse
