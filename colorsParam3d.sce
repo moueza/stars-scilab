@@ -24,7 +24,7 @@ function xyz=terreMATRIX(T)
     // xyz=[0 0 0]
     xyz(1,:)=cos(2*%pi*T); //!! que car 1 fois op speciale 
     xyz(2,:)=sin(2*%pi*T) ;
-    xyz(3,:)=150000000*T ; 
+    xyz(3,:)=1*T ; 
 endfunction
 
 
@@ -57,27 +57,20 @@ styless=ones(1,size(Z,"c"))
 //param3d(X, Y, ZZ = list(Z, [color("orange")]));//courbe gauche, left curve
 //param3d(X, Y,  list(Z, list(Z,styless)));//courbe gauche, left curve
 
-param3d(X, Y, 3);//courbe gauche, left curve
+//https://help.scilab.org/docs/6.0.0/en_US/param3d_properties.html
+a=get("current_axes");//get the handle of the newly created axes
 
 
+t=[0:0.1:5*%pi]';
+//param3d1([sin(t),sin(2*t)],[cos(t),cos(2*t)],[t/10,sin(t)])
+//param3d(X, Y);//courbe gauche, left curve
+ param3d(X,Y,Z)
 
-// simple plot using z=f(x,y)
-//x=[0:0.3:2*%pi]';
-//x=[0:0.3:149597887*2]';
-x=linspace(0,149597887*2,10)';
-y=linspace(0,149597887*2,10)';
-
-//z=sin(x)*cos(x');++++++++++++++++++++++ matrix if vectors
-//z=0;
-z=ones(x*y')*x; // vector addition for ones ,vector so should fail because we want ~ square matrix
-//z=ones(x*y')*x';
-plot3d(x,y,z);//nappe mesh
-xs2png(0,'terre.png')
-
-
-//POO tlist list
-  demiGdAxeMARS=227939200;
-excentMARS=	0.0934;
-periodMARS=  	779.96    ;
-
-//TODO constellation Cassiopee, gde Ourse, Pte Ourse
+//a.rotation_angles=[65,75];
+//a.data_bounds=[-1,-1,-1;1,1,2]; //boundaries given by data_bounds
+//a.thickness = 2;
+h=a.children //get the handle of the param3d entity: an Compound composed of 2 curves
+h.children().foreground = 5 // first curve
+//curve2 = h.children(2);
+//curve2.foreground = 6;
+//curve2.mark_style = 2;
