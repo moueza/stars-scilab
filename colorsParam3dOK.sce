@@ -64,13 +64,18 @@ a=get("current_axes");//get the handle of the newly created axes
 t=[0:0.1:5*%pi]';
 //param3d1([sin(t),sin(2*t)],[cos(t),cos(2*t)],[t/10,sin(t)])
 //param3d(X, Y);//courbe gauche, left curve
- param3d(X,Y,Z)
+param3d(X,Y,Z)
 
 //a.rotation_angles=[65,75];
 //a.data_bounds=[-1,-1,-1;1,1,2]; //boundaries given by data_bounds
 //a.thickness = 2;
-h=a.children //get the handle of the param3d entity: an Compound composed of 2 curves
-h.children().foreground = 5 // first curve
+//h=a.children //get the handle of the param3d entity: an Compound composed of 2 curves
+//h.children(1).foreground = 5 // first curve
 //curve2 = h.children(2);
 //curve2.foreground = 6;
 //curve2.mark_style = 2;
+
+//https://help.scilab.org/docs/5.3.0/en_US/param3d.html
+e=gce() //the handle on the 3D polyline
+//e.foreground=color('red');
+e.foreground=color('green');
