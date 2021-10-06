@@ -57,9 +57,9 @@ styless=ones(1,size(Z,"c"))
 //param3d(X, Y, ZZ = list(Z, [color("orange")]));//courbe gauche, left curve
 //param3d(X, Y,  list(Z, list(Z,styless)));//courbe gauche, left curve
 
-param3d(X, Y, 3);//courbe gauche, left curve
-
-
+//param3d(X, Y, 3); KO
+param3d(X, Y,Z, 3);//courbe gauche, left curve OK
+//param3d(X, Y,Z, flag=[5,2,4]); //nul cf colorsPlot3dOK.sce
 
 // simple plot using z=f(x,y)
 //x=[0:0.3:2*%pi]';
@@ -71,7 +71,7 @@ y=linspace(0,149597887*2,10)';
 //z=0;
 z=ones(x*y')*x; // vector addition for ones ,vector so should fail because we want ~ square matrix
 //z=ones(x*y')*x';
-plot3d(x,y,z);//nappe mesh
+plot3d(x,y,z);//nappe mesh, cf colorsPlot3dOK.sce
 xs2png(0,'terre.png')
 
 

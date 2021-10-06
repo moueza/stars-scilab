@@ -11,7 +11,7 @@ y=linspace(0,149597887*2,10)';
 //z=ones(x*y')*x; // vector addition for ones ,vector so should fail because we want ~ square matrix
 //z=ones(x*y')*x';
 z=ones(x*y')*1;
-plot3d(x,y,z,flag=[5,2,4]);//nappe mesh, 5 = red
+plot3d(x,y,z,flag=[5,2,4]);//$>getcolor ->nappe mesh, 5 = red
 xs2png(0,'terre.png')
 
 
@@ -21,3 +21,5 @@ excentMARS=	0.0934;
 periodMARS=  	779.96    ;
 
 //TODO constellation Cassiopee, gde Ourse, Pte Ourse
+//Lune
+
