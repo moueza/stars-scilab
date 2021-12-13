@@ -78,12 +78,22 @@ xs2png(0,'terre.png')
 //POO tlist list
   demiGdAxeMARS=227939200;
 excentMARS=	0.0934;
-periodMARS=  	779.96    ;
+periodMARS=  779.96    ;
 
 //TODO constellation Cassiopee, gde Ourse, Pte Ourse
 
  cassiopeiaOrder=list(["eps" "delta" "gamma" "alpha" "beta"])
  
+ //h deg
+ cassiopeiaOrder(2)=[[hms2h(01,  54,  23.68)  hms2h(+63, 40 ,12.5)  442]
+  [  hms2h(01, 25, 48.60)   hms2h(+60,14, 07.5)	99]
+ [hms2h(00, 56, 42.50)  hms2h(+60,43, 00.3)613   ]
+ 
+ [  hms2h(00, 40, 30.39)      hms2h(56, 32, 14.7)	228]
+ [  hms2h(00, 09, 10.09)     hms2h(59, 09,00.8) 54]
+]
+
+
  function res=hms2h(h,m,s)
      res= h+m/60+s/3600
      endfunction
