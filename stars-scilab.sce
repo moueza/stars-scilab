@@ -81,3 +81,22 @@ excentMARS=	0.0934;
 periodMARS=  	779.96    ;
 
 //TODO constellation Cassiopee, gde Ourse, Pte Ourse
+
+ cassiopeiaOrder=list(["eps" "delta" "gamma" "alpha" "beta"])
+ 
+ function res=hms2h(h,m,s)
+     res= h+m/60+s/3600
+     endfunction
+
+ function [h,m,s]=h2hms(hh)
+     h= (hh,1)//integer of
+     m=modulo(((hh-h)*60),1)
+     s=modulo((hh*3600),60)
+     endfunction
+
+ function res=h2hmsV2(hh)
+     h= (hh,1)//integer of
+     m=modulo(((hh-h)*60),1)
+     s=modulo((hh*3600),60)
+     res=list(h,m,s)
+     endfunction
