@@ -80,8 +80,13 @@ xs2png(0,'terre.png')
 excentMARS=	0.0934;
 periodMARS=  779.96    ;
 
-//TODO constellation Cassiopee, gde Ourse, Pte Ourse
 
+
+
+
+
+//TODO constellation Cassiopee, gde Ourse, Pte Ourse
+//https://fr.wikipedia.org/wiki/Cassiop%C3%A9e_(constellation)
  cassiopeiaOrder=list(["eps" "delta" "gamma" "alpha" "beta"])
  
  //h deg
@@ -94,15 +99,30 @@ periodMARS=  779.96    ;
 ]
 
 
+//cygnus
+//https://fr.wikipedia.org/wiki/Liste_d%27%C3%A9toiles_du_Cygne
+//α, γ, ε, δ beta
+ cygnusOrder=list(["alpha"  "gamma" "eps" "delta"  "beta"])
+ /*
+txt='
+ Deneb	α	50		197345	102098	20h 41m 25,91s	+45° 16′ 49,2″	1,25	−8,73	3228	A2Ia	Prototype des variables de type α Cyg
+γ Cyg	γ	37		194093	100453	20h 22m 13,70s	+40° 15′ 24,1″	2,23	−6,12	1523	F8Ib	Sadr, Sadir ; variable
+ε Cyg	ε	53		197989	102488	20h 46m 12,43s	+33° 58′ 10,0″	2,48	0,76	72	K0III	Aljanah , Gienah, Gienah Cygni
+δ Cyg	δ	18		186882	97165	19h 44m 58,44s	+45° 07′ 50,5″	2,86	−0,74	171	B9.5III	Fawaris, Rukh ; étoile triple
+Albiréo A	β1	6		183912	95947	19h 30m 43,29s	+27° 57′ 34,9″	3,05	−2,31	385	K3II+...	Binaire optique notable avec Albiréo B ; binaire spectroscopique
+'
+*/
+
  function res=hms2h(h,m,s)
      res= h+m/60+s/3600
      endfunction
 
- function [h,m,s]=h2hms(hh)
-     h= (hh,1)//integer of
-     m=modulo(((hh-h)*60),1)
+ function [h,m,s] = h2hms(hh)
+     h= modulo(hh,1)//integer of
+      m=modulo(((hh-h)*60),1)
      s=modulo((hh*3600),60)
      endfunction
+[h,m,s] = h2hms(1.25)
 
  function res=h2hmsV2(hh)
      h= (hh,1)//integer of
@@ -110,3 +130,17 @@ periodMARS=  779.96    ;
      s=modulo((hh*3600),60)
      res=list(h,m,s)
      endfunction
+
+//blue book p33
+function y = sq(x)
+y=x*x
+endfunction
+
+
+//blue book p34
+function [v,ind] = mafonc(vi,op)
+v=3
+ind=4
+endfunction
+
+[v,ind] = mafonc(1,2)
