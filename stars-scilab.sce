@@ -1,6 +1,7 @@
 //feature request refactor
 //exec('/home/peter/POUB/stars-scilab/stars-scilab.sce', 1)
 //                                                      +++
+//courbe gauche = 3D curve
 demiGdAxeTERRE=	149597887.5;
 excentTERRE =  0.01671022;
 periodTERRE=     365.256363;
@@ -103,15 +104,9 @@ periodMARS=  779.96    ;
 //https://fr.wikipedia.org/wiki/Liste_d%27%C3%A9toiles_du_Cygne
 //α, γ, ε, δ beta
  cygnusOrder=list(["alpha"  "gamma" "eps" "delta"  "beta"])
- /*
-txt='
- Deneb	α	50		197345	102098	20h 41m 25,91s	+45° 16′ 49,2″	1,25	−8,73	3228	A2Ia	Prototype des variables de type α Cyg
-γ Cyg	γ	37		194093	100453	20h 22m 13,70s	+40° 15′ 24,1″	2,23	−6,12	1523	F8Ib	Sadr, Sadir ; variable
-ε Cyg	ε	53		197989	102488	20h 46m 12,43s	+33° 58′ 10,0″	2,48	0,76	72	K0III	Aljanah , Gienah, Gienah Cygni
-δ Cyg	δ	18		186882	97165	19h 44m 58,44s	+45° 07′ 50,5″	2,86	−0,74	171	B9.5III	Fawaris, Rukh ; étoile triple
-Albiréo A	β1	6		183912	95947	19h 30m 43,29s	+27° 57′ 34,9″	3,05	−2,31	385	K3II+...	Binaire optique notable avec Albiréo B ; binaire spectroscopique
-'
-*/
+
+txt=cygnusFile.txt
+
 
  function res=hms2h(h,m,s)
      res= h+m/60+s/3600
