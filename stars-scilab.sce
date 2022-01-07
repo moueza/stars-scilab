@@ -77,7 +77,7 @@ xs2png(0,'terre.png')
 
 
 //POO tlist list
-  demiGdAxeMARS=227939200;
+demiGdAxeMARS=227939200;
 excentMARS=	0.0934;
 periodMARS=  779.96    ;
 
@@ -88,54 +88,54 @@ periodMARS=  779.96    ;
 
 //TODO constellation Cassiopee, gde Ourse, Pte Ourse
 //https://fr.wikipedia.org/wiki/Cassiop%C3%A9e_(constellation)
- cassiopeiaOrder=list(["eps" "delta" "gamma" "alpha" "beta"])
- 
- //h deg
- cassiopeiaOrder(2)=[[hms2h(01,  54,  23.68)  hms2h(+63, 40 ,12.5)  442]
-  [  hms2h(01, 25, 48.60)   hms2h(+60,14, 07.5)	99]
- [hms2h(00, 56, 42.50)  hms2h(+60,43, 00.3)613   ]
- 
- [  hms2h(00, 40, 30.39)      hms2h(56, 32, 14.7)	228]
- [  hms2h(00, 09, 10.09)     hms2h(59, 09,00.8) 54]
+cassiopeiaOrder=list(["eps" "delta" "gamma" "alpha" "beta"])
+
+//h deg
+cassiopeiaOrder(2)=[[hms2h(01,  54,  23.68)  hms2h(+63, 40 ,12.5)  442]
+[  hms2h(01, 25, 48.60)   hms2h(+60,14, 07.5)	99]
+[hms2h(00, 56, 42.50)  hms2h(+60,43, 00.3)613   ]
+
+[  hms2h(00, 40, 30.39)      hms2h(56, 32, 14.7)	228]
+[  hms2h(00, 09, 10.09)     hms2h(59, 09,00.8) 54]
 ]
 
 
 //cygnus
 //https://fr.wikipedia.org/wiki/Liste_d%27%C3%A9toiles_du_Cygne
 //α, γ, ε, δ beta
- cygnusOrder=list(["alpha"  "gamma" "eps" "delta"  "beta"])
+cygnusOrder=list(["alpha"  "gamma" "eps" "delta"  "beta"])
 
 txt=cygnusFile.txt
 
 
- function res=hms2h(h,m,s)
-     res= h+m/60+s/3600
-     endfunction
+function res=hms2h(h,m,s)
+    res= h+m/60+s/3600
+endfunction
 
- function [h,m,s] = h2hms(hh)
-     h= modulo(hh,1)//integer of
-      m=modulo(((hh-h)*60),1)
-     s=modulo((hh*3600),60)
-     endfunction
+function [h,m,s] = h2hms(hh)
+    h= modulo(hh,1)//integer of
+    m=modulo(((hh-h)*60),1)
+    s=modulo((hh*3600),60)
+endfunction
 [h,m,s] = h2hms(1.25)
 
- function res=h2hmsV2(hh)
-     h= (hh,1)//integer of
-     m=modulo(((hh-h)*60),1)
-     s=modulo((hh*3600),60)
-     res=list(h,m,s)
-     endfunction
+function res=h2hmsV2(hh)
+    h= (hh,1)//integer of
+    m=modulo(((hh-h)*60),1)
+    s=modulo((hh*3600),60)
+    res=list(h,m,s)
+endfunction
 
 //blue book p33
 function y = sq(x)
-y=x*x
+    y=x*x
 endfunction
 
 
 //blue book p34
 function [v,ind] = mafonc(vi,op)
-v=3
-ind=4
+    v=3
+    ind=4
 endfunction
 
 [v,ind] = mafonc(1,2)
