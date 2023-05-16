@@ -51,14 +51,26 @@ disp("class of failingObj:");class(failingObj)
 goodObj=dataShrunkorderedUnlabeled(1,15)
 disp("class of goodObj:");class(goodObj)
 
+
+
+
+
+valued=dataShrunkorderedUnlabeled
 for i = 1:nbLines
    disp(i);
   #if (typeinfo(dataShrunkorderedUnlabeled(i,15))==typeEx)
   dataShrunkorderedUnlabeled(i,15)
-  if (( dataShrunkorderedUnlabeled(i,15))==failingObj)
+  #if (( dataShrunkorderedUnlabeled(i,15))==failingObj)
+  if ( isequal(dataShrunkorderedUnlabeled(i,15),failingObj))
     #typeinfo(dataShrunkorderedUnlabeled(i,15))
-    disp("OK")
+    disp("OK");
+    #printf ("OK");
+    dataShrunkorderedUnlabeled(i,15)=999;
   else
-    disp("KO")
+    disp("KO");
   endif
 endfor
+
+dataShrunkorderedUnlabeled2=dataShrunkorderedUnlabeled;
+valued=dataShrunkorderedUnlabeled2;
+
