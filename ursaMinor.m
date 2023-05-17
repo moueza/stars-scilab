@@ -103,10 +103,10 @@ siz2=size(orderedForVectorizeddrawUseful)
 nbLines3=siz2(1)
 for i = 1:nbLines3
     #if (isinteger(orderedForVectorizeddrawUseful(i,15)))
-    if (rem(orderedForVectorizeddrawUseful{i,15},1)==0)
+    if (rem(orderedForVectorizeddrawUseful{i,30},1)==0)
       # 1 thing to do
       linee=orderedForVectorizeddrawUseful(i,:)
-      lineExtend=[linee,orderedForVectorizeddrawUseful(i,15)]
+      lineExtend=[linee,orderedForVectorizeddrawUseful{i,30}]
       uniced=[uniced;lineExtend]
       i
    else
