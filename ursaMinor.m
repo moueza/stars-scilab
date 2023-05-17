@@ -102,21 +102,23 @@ uniced=[]
 siz2=size(orderedForVectorizeddrawUseful)
 nbLines3=siz2(1)
 for i = 1:nbLines3
-  if (isinteger(orderedForVectorizeddrawUseful(i,15)))
-    # 1 thing to do
-    linee=orderedForVectorizeddrawUseful(i,:)
-    lineExtend=[linee,orderedForVectorizeddrawUseful(i,15)]
-    uniced=[uniced;lineExtend]
-  else
-   #so it is a float
-   # 2 things to do
+    #if (isinteger(orderedForVectorizeddrawUseful(i,15)))
+    if (rem(orderedForVectorizeddrawUseful{i,15},1)==0)
+      # 1 thing to do
+      linee=orderedForVectorizeddrawUseful(i,:)
+      lineExtend=[linee,orderedForVectorizeddrawUseful(i,15)]
+      uniced=[uniced;lineExtend]
+      i
+   else
+       #so it is a float
+       # 2 things to do
 
-   #{
-   linee=orderedForVectorizeddrawUseful(i,:)
-   lineExtend=[linee, floor(orderedForVectorizeddrawUseful{i,15})]# { because cell
-   uniced=[uniced;lineExtend]
+       #{
+       linee=orderedForVectorizeddrawUseful(i,:)
+       lineExtend=[linee, floor(orderedForVectorizeddrawUseful{i,15})]# { because cell
+       uniced=[uniced;lineExtend]
 
-   lineExtend=[orderedForVectorizeddrawUseful(i,:), floor(rem(orderedForVectorizeddrawUseful{i,15},1)*10) ]#subsomption only .x
-   #}
-  endif
+       lineExtend=[orderedForVectorizeddrawUseful(i,:), floor(rem(orderedForVectorizeddrawUseful{i,15},1)*10) ]#subsomption only .x
+       #}
+   endif
 endfor
