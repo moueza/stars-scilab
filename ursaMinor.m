@@ -113,12 +113,12 @@ for i = 1:nbLines3
        #so it is a float
        # 2 things to do
 
-       #{
+
        linee=orderedForVectorizeddrawUseful(i,:)
-       lineExtend=[linee, floor(orderedForVectorizeddrawUseful{i,15})]# { because cell
+       lineExtend=[linee, floor(orderedForVectorizeddrawUseful{i,30})]# { because cell
        uniced=[uniced;lineExtend]
 
-       lineExtend=[orderedForVectorizeddrawUseful(i,:), floor(rem(orderedForVectorizeddrawUseful{i,15},1)*10) ]#subsomption only .x
-       #}
+       lineExtend=[orderedForVectorizeddrawUseful(i,:), floor(10*rem(orderedForVectorizeddrawUseful{i,30},1)) ]#subsomption only .x
+       uniced=[uniced;lineExtend]
    endif
 endfor
