@@ -53,24 +53,70 @@ disp("class of goodObj:");class(goodObj)
 
 
 
-
+#************************************
+#
 
 valued=dataShrunkorderedUnlabeled
 for i = 1:nbLines
    disp(i);
   #if (typeinfo(dataShrunkorderedUnlabeled(i,15))==typeEx)
   dataShrunkorderedUnlabeled(i,15)
-  #if (( dataShrunkorderedUnlabeled(i,15))==failingObj)
   if ( isequal(dataShrunkorderedUnlabeled(i,15),failingObj))
+
     #typeinfo(dataShrunkorderedUnlabeled(i,15))
     disp("OK");
     #printf ("OK");
-    dataShrunkorderedUnlabeled(i,15)=999;
+    dataShrunkorderedUnlabeled(i,siz(2)+1)=999;#numbered col
   else
     disp("KO");
+    dataShrunkorderedUnlabeled(i,siz(2)+1)=dataShrunkorderedUnlabeled(i,15);
   endif
 endfor
 
 dataShrunkorderedUnlabeled2=dataShrunkorderedUnlabeled;
 valued=dataShrunkorderedUnlabeled2;
 
+#************************************
+#useful = remove 999-lines
+orderedForVectorizeddrawUseful=valued
+finished=false
+nbLinesInit=nbLines;
+while ((i <=nbLinesInit) & (!finished))
+  disp(i);
+  if (i==size(orderedForVectorizeddrawUseful)(1))
+       finished=true
+  endif
+  if (isequal( orderedForVectorizeddrawUseful(i,15),999))
+    #typeinfo(dataShrunkorderedUnlabeled(i,15))
+    orderedForVectorizeddrawUseful(i,:)=[]
+    nbLinesInit--;
+
+  else
+    i=i+1;
+  endif
+end
+orderedForVectorizeddrawUseful
+#************************************
+#nb unicity : uniced
+uniced=[]
+siz2=size(orderedForVectorizeddrawUseful)
+nbLines3=siz2(1)
+for i = 1:nbLines3
+  if (isinteger(orderedForVectorizeddrawUseful(i,15)))
+    # 1 thing to do
+    linee=orderedForVectorizeddrawUseful(i,:)
+    lineExtend=[linee,orderedForVectorizeddrawUseful(i,15)]
+    uniced=[uniced;lineExtend]
+  else
+   #so it is a float
+   # 2 things to do
+
+   #{
+   linee=orderedForVectorizeddrawUseful(i,:)
+   lineExtend=[linee, floor(orderedForVectorizeddrawUseful{i,15})]# { because cell
+   uniced=[uniced;lineExtend]
+
+   lineExtend=[orderedForVectorizeddrawUseful(i,:), floor(rem(orderedForVectorizeddrawUseful{i,15},1)*10) ]#subsomption only .x
+   #}
+  endif
+endfor
