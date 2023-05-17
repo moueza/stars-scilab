@@ -118,7 +118,8 @@ for i = 1:nbLines3
        lineExtend=[linee, floor(orderedForVectorizeddrawUseful{i,30})]# { because cell
        uniced=[uniced;lineExtend]
 
-       lineExtend=[orderedForVectorizeddrawUseful(i,:), floor(10*rem(orderedForVectorizeddrawUseful{i,30},1)) ]#subsomption only .x
+       tol=.0499;
+       lineExtend=[orderedForVectorizeddrawUseful(i,:), floor(10*(rem(orderedForVectorizeddrawUseful{i,30},1)+tol)) ]#subsomption only .x
        uniced=[uniced;lineExtend]
    endif
 endfor
